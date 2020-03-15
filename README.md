@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+________________________________________________________________________________
+
+React app of Issue Tickiting System. 
+Features include.
+-Account verification/authentication (todo)
+-Email verification (todo)
+-Email Notification (todo)
+-Realational Database (todo)
+
