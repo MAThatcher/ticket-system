@@ -1,4 +1,5 @@
 // Example data from User database
+// Passwords will be hashed in final version
 const user = [
     {
         userId: "user1@email.com",
