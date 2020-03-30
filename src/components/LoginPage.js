@@ -1,5 +1,6 @@
 import React from "react"
 import userData from "../UserData"
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component{
     constructor(){
@@ -8,8 +9,7 @@ class Login extends React.Component{
             users: userData
         }
         this.logIn = this.logIn.bind(this)
-        this.forgotPassword = this.forgotPassword.bind(this)
-        this.createAccount = this.createAccount.bind(this)
+
     }
 
     logIn(){
@@ -17,16 +17,8 @@ class Login extends React.Component{
         // log in and take to the proper page. Admins to admin page
         // user to user page
         console.log("login Function")
-    }
-
-    createAccount() {
-        // takes to the create account page
-        console.log("createAccount")
-    }
-
-    forgotPassword() {
-        // takes to the forgot password page
-        console.log("forgotPassword")
+        //const userItem = this.state.users.map(item => console.log(item.userId))
+        console.log("end login Function")
     }
 
     render(){
@@ -43,13 +35,13 @@ class Login extends React.Component{
                         <button className="btn  btn-primary " type="submit">Sign in</button>
                     </form>
                     <br></br>
-                    <form>
+                    <Link to="/CreateAccount">
                         <button  type="submit" className="btn  btn-primary "> Create Account </button>
-                    </form>
-                    <br/>
-                    <form>
+                    </Link>
+                    <br/><br/>
+                    <Link to="/ForgotPassword">
                         <button type="submit" className="btn  btn-primary "> Forgot Password </button>
-                    </form>
+                    </Link>
                 </body>
                 
             

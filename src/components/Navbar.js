@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from 'react-router-dom';
 
 class Navbar extends React.Component{
     constructor(){
@@ -7,14 +8,10 @@ class Navbar extends React.Component{
             size:40,
             imageLocation:"./moon.png"
         }
-        this.handleClick = this.handleClick.bind(this)
         this.handleHover = this.handleHover.bind(this)
         this.handleExit = this.handleExit.bind(this)
     }
 
-    handleClick() { 
-        //return to menue
-    }
 
     handleExit() {
         this.setState(prevState => {
@@ -25,7 +22,7 @@ class Navbar extends React.Component{
     }
 
     handleHover() {
-        this.setState(prevState => {
+        this.setState( () => {
             return {
                 imageLocation:"./moonReversed.png"
             }
@@ -35,7 +32,9 @@ class Navbar extends React.Component{
     render(){
         return (
             <nav className="navbar navbar-dark bg-dark border border-dark" >
-                <img onMouseEnter={this.handleHover} onMouseLeave= {this.handleExit} onClick={this.handleClick} src={this.state.imageLocation} height={40} width={40} />
+                <Link to="/">
+                    <img onMouseEnter={this.handleHover} onMouseLeave= {this.handleExit} src={this.state.imageLocation} height={40} width={40} />
+                </ Link>
                 <label className="navbar-brand">Luna Ticketing Program</label>
             </nav>
         )
