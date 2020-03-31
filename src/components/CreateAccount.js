@@ -4,6 +4,7 @@ class CreateAccount extends React.Component {
   render(){
     return (
       <div>Create Account</div>
+      
     )
   }
 }

@@ -42,7 +42,7 @@ class Login extends React.Component{
             }
         })
         console.log(user)
-        console.log("end login Function")
+        console.log("end login  Function")
     }
 
     passwordOnChange(e){
@@ -61,7 +61,6 @@ class Login extends React.Component{
         return(    
                 <body className="bg-transparent text-center text-white" >
                     <form className="form-signin">
-                        <img className="mb-4" src="../../public/moon.png" alt="" width="72" height="72"></img>
                         <h1 className="h3 mb-3 font-weight-normal" >Log In</h1>
                         {this.state.badLogin ? <p style={style}> Incorrect Login Info</p> : <div></div>}
                         {this.state.verify ? <p style={style}> Account Must be Verified</p> : <div></div>}
