@@ -1,7 +1,6 @@
 import React from "react"
 import userData from "../UserData"
 import {Link} from 'react-router-dom';
-import BadLogin from "./badLogin"
 
 class Login extends React.Component{
     constructor(){
@@ -10,8 +9,7 @@ class Login extends React.Component{
             users: userData,
             email:"",
             pw:"",
-            badLogin: false,
-            verify: false
+            badLogin: false
         }
         this.logIn = this.logIn.bind(this)
         this.passwordOnChange = this.passwordOnChange.bind(this)
@@ -27,23 +25,21 @@ class Login extends React.Component{
         console.log("login Function")
 
         //determines if log in info is for a valid account
-        var user = {}
-        this.state.users.map( accountInfo => {
-            if (accountInfo.userId === this.state.email && 
-                accountInfo.userPw === this.state.pw &&
-                    accountInfo.activated === true){
-                user = accountInfo
-            }
-            else if (accountInfo.userId === this.state.email && 
-                accountInfo.userPw === this.state.pw &&
-                accountInfo.activated === false){
-                    console.log("Verify account required")
-                    this.setState({verify: true})
-            }
-        })
+        const user = this.state.users.filter(loginInfo => loginInfo.userId === this.state.email && loginInfo.userPw === this.state.pw && loginInfo.activated === true)
+        if (user.length === 0){
+            this.setState({badLogin:true})
+            console.log("Bad loging info")
+        }
+        else {
+            this.setState({badLogin:false})
+            console.log("Correct Login")
+        }
+        
         console.log(user)
+        console.log("User Id" , user.userId)
         console.log("end login  Function")
     }
+
 
     passwordOnChange(e){
         console.log("pwchange")
@@ -63,7 +59,6 @@ class Login extends React.Component{
                     <form className="form-signin">
                         <h1 className="h3 mb-3 font-weight-normal" >Log In</h1>
                         {this.state.badLogin ? <p style={style}> Incorrect Login Info</p> : <div></div>}
-                        {this.state.verify ? <p style={style}> Account Must be Verified</p> : <div></div>}
                         <input 
                             type="email" 
                             id="inputEmail" 
