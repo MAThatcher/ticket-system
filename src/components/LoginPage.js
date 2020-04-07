@@ -36,7 +36,7 @@ class Login extends React.Component{
         }
         
         console.log(user)
-        console.log("User Id" , user.userId)
+        console.log("User Id" , user[0].userId)
         console.log("end login  Function")
     }
 
