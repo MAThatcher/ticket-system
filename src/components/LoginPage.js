@@ -69,7 +69,6 @@ class Login extends React.Component{
                             autoFocus>
                         </input>
                         <br/>
-                        Another Test
                         <input 
                             type="password" 
                             id="inputPassword" 
