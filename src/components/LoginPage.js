@@ -26,18 +26,29 @@ class Login extends React.Component{
 
         //determines if log in info is for a valid account
         const user = this.state.users.filter(loginInfo => loginInfo.userId === this.state.email && loginInfo.userPw === this.state.pw && loginInfo.activated === true)
-        if (user.length === 0){
-            this.setState({badLogin:true})
-            console.log("Bad loging info")
-        }
-        else {
+
+        //Debug
+        if (user.length === 1){
             this.setState({badLogin:false})
             console.log("Correct Login")
         }
-        
-        console.log(user)
-        console.log("User Id" , user[0].userId)
-        console.log("end login  Function")
+        else {
+            this.setState({badLogin:true})
+            console.log("Bad loging info")
+        }
+        if (this.state.badLogin === true){
+            console.log(user)
+            console.log("User Id" , user[0].userId)
+            console.log("end login  Function")
+        }
+        if (this.state.badLogin === true){
+
+        }
+        else if (this.state.badLogin === false){
+
+        }
+        // end debug
+
     }
 
 
@@ -69,6 +80,7 @@ class Login extends React.Component{
                             autoFocus>
                         </input>
                         <br/>
+                            
                         <input 
                             type="password" 
                             id="inputPassword" 
@@ -79,7 +91,7 @@ class Login extends React.Component{
                             required>
                         </input>
                         <br/><br/>
-                        <button className="btn  btn-primary " onMouseOver={this.logIn}>Sign in</button>
+                        <button className="btn  btn-primary " onClick={this.logIn}>Sign in</button>
                     </form>
                     <br></br>
                     <Link to="/CreateAccount">

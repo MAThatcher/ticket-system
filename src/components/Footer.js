@@ -5,7 +5,7 @@ class Footer extends React.Component{
         return(
             <footer className="footer mt-auto py-3 bg-transparent ">
                 <div className="container">
-                    <span className="text-white-50">Created By Mitchell Thatcher</span>
+                    <span className="text-black-50">Created By Mitchell Thatcher. Updated 4-14-2020</span>
                 </div>
             </footer>
         )

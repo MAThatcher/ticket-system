@@ -5,6 +5,7 @@ import UserLanding from "./components/UserLanding"
 import ForgotPassowrd from "./components/ForgotPassword"
 import CreateAccount from "./components/CreateAccount"
 import Nav from "./components/Navbar"
+import Footer from './components/Footer';
 
 class App extends React.Component {
   render(){
@@ -16,6 +17,7 @@ class App extends React.Component {
           <Route path="/Home" exact component={UserLanding} />
           <Route path="/ForgotPassword" exact component={ForgotPassowrd} />
           <Route path="/CreateAccount" exact component={CreateAccount} />
+          <Route path="/" component={Footer} />
         
       </BrowserRouter>
     )
