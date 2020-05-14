@@ -33,7 +33,7 @@ class Navbar extends React.Component{
 
     render(){
         return (
-            <nav className="navbar navbar-dark bg-dark border border-dark" >
+            <nav style={{backgroundColor: "#34537f"}}className="navbar text-white" >
                 <Link to="/">
                     <img onMouseEnter={this.handleHover} onMouseLeave= {this.handleExit} src={this.state.imageLocation} height={40} width={40} />
                 </ Link>

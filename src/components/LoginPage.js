@@ -36,7 +36,7 @@ class Login extends React.Component{
             this.setState({badLogin:true})
             console.log("Bad loging info")
         }
-        if (this.state.badLogin === true){
+        /*if (this.state.badLogin === false){
             console.log(user)
             console.log("User Id" , user[0].userId)
             console.log("end login  Function")
@@ -46,7 +46,7 @@ class Login extends React.Component{
         }
         else if (this.state.badLogin === false){
 
-        }
+        }*/
         // end debug
 
     }
