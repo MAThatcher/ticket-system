@@ -57,7 +57,7 @@ class CreateAccount extends React.Component {
   render(){
     return (
       <div className="bg-transparent text-center text-white" >
-        <div>Create Account</div><br/>
+        <h1 className="h3 mb-3 font-weight-normal" >Create Account</h1>
         <div>Please fill out this form</div>
         <form className="form-signin">
 

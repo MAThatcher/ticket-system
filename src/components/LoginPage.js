@@ -62,14 +62,13 @@ class Login extends React.Component{
     }
 
     render(){
-        const style = {
-            color:"#FF0000"
-        }
         return(    
                 <body className="bg-transparent text-center text-white" >
                     <form className="form-signin">
                         <h1 className="h3 mb-3 font-weight-normal" >Log In</h1>
-                        {this.state.badLogin ? <p style={style}> Incorrect Login Info</p> : <div></div>}
+
+                        {this.state.badLogin ? <p style={{color:"#FF0000"}}> Incorrect Login Info</p> : <div></div>}
+
                         <input 
                             type="email" 
                             id="inputEmail" 
@@ -78,8 +77,7 @@ class Login extends React.Component{
                             placeholder="Email address" 
                             required 
                             autoFocus>
-                        </input>
-                        <br/>
+                        </input><br/>
                             
                         <input 
                             type="password" 
@@ -90,17 +88,25 @@ class Login extends React.Component{
                             onChange={this.passwordOnChange}
                             required>
                         </input>
+
                         <br/><br/>
+
                         <button className="btn  btn-primary " onClick={this.logIn}>Sign in</button>
+
                     </form>
+
                     <br></br>
+
                     <Link to="/CreateAccount">
                         <button  type="submit" className="btn  btn-primary "> Create Account </button>
                     </Link>
+
                     <br/><br/>
+
                     <Link to="/ForgotPassword">
                         <button type="submit" className="btn  btn-primary "> Forgot Password </button>
                     </Link>
+
                 </body>
                 
             
