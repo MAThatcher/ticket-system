@@ -24,6 +24,7 @@ class CreateAccount extends React.Component {
     console.log("createAccount")
     if(this.state.pw1 !== this.state.pw2){
       this.setState({pwSame:false})
+      this.setState({emailExists:false})
     }
     else{
       this.setState({pwSame:true})
