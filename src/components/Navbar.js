@@ -35,7 +35,7 @@ class Navbar extends React.Component{
         return (
             <nav style={{backgroundColor: "#34537f"}}className="navbar text-white" >
                 <Link to="/">
-                    <img onMouseEnter={this.handleHover} onMouseLeave= {this.handleExit} src={this.state.imageLocation} height={40} width={40} />
+                    <img alt="" onMouseEnter={this.handleHover} onMouseLeave= {this.handleExit} src={this.state.imageLocation} height={40} width={40} />
                 </ Link>
                 <label className="navbar-brand">Luna Ticketing Program</label>
             </nav>

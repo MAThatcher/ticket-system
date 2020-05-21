@@ -36,19 +36,6 @@ class Login extends React.Component{
             this.setState({badLogin:true})
             console.log("Bad loging info")
         }
-        /*if (this.state.badLogin === false){
-            console.log(user)
-            console.log("User Id" , user[0].userId)
-            console.log("end login  Function")
-        }
-        if (this.state.badLogin === true){
-
-        }
-        else if (this.state.badLogin === false){
-
-        }*/
-        // end debug
-
     }
 
 
@@ -84,7 +71,6 @@ class Login extends React.Component{
                             id="inputPassword" 
                             value={this.state.pw} 
                             placeholder="Password" 
-                            value={this.state.pw}
                             onChange={this.passwordOnChange}
                             required>
                         </input>

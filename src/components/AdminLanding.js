@@ -1,10 +1,10 @@
 import React from 'react';
 
-class UserLanding extends React.Component {
+class AdminLanding extends React.Component {
   constructor(){
     super()
     this.state = {
-      users:"User",
+      users:"Admin",
 
     }
 
@@ -19,4 +19,4 @@ class UserLanding extends React.Component {
   }
 }
 
-export default UserLanding;
+export default AdminLanding;
