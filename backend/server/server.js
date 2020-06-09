@@ -10,4 +10,6 @@ app.use(express.json())
 app.use("/users",usersRoutes)
 app.get("/", (req,res) => res.send("Hello World!"))
 
-app.listen(5000)
+app.listen(5000, ()=> {
+    console.log(`Server listening on port 5000`)
+})
