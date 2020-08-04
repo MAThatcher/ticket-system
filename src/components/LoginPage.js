@@ -18,7 +18,7 @@ class Login extends React.Component{
 
     }
 
-    logIn(){
+    logIn(event){
         // if email exists in users.userId and password matches
         // log in and take to the proper page. Admins to admin page
         // user to user page
@@ -36,6 +36,7 @@ class Login extends React.Component{
             this.setState({badLogin:true})
             console.log("Bad loging info")
         }
+        event.preventDefault()
     }
 
 
