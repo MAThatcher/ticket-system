@@ -5,7 +5,7 @@ class CreateAccount extends React.Component {
   constructor(){
     super()
     this.state = {
-      users:userData,
+      users:userData,//REMOVE WHEN CONNECTED TO DATABASE
       email:"",
       username:"",
       pw1:"",
@@ -20,7 +20,7 @@ class CreateAccount extends React.Component {
     this.updatePw2 = this.updatePw2.bind(this)
 }
 
-  createAccount(){
+  createAccount(event){
     console.log("createAccount")
     if(this.state.pw1 !== this.state.pw2){
       this.setState({pwSame:false})
@@ -34,10 +34,11 @@ class CreateAccount extends React.Component {
         this.setState({emailExists:true})
       }
       else if (existingEmail.length === 0){
-        //add user to database
+        //TODO add user to database
       }
     }
     console.log(this.state)
+    event.preventDefault()
   }
   updateEmail(e){
     this.setState({email: e.target.value})
@@ -59,6 +60,7 @@ class CreateAccount extends React.Component {
     return (
       <div className="bg-transparent text-center text-white" >
         <h1 className="h3 mb-3 font-weight-normal" >Create Account</h1>
+        <div className="card-main">
         <div>Please fill out this form</div>
         <form className="form-signin">
 
@@ -101,11 +103,11 @@ class CreateAccount extends React.Component {
             onChange={this.updatePw2}>
           </input><br/><br/>
 
-          <button type="submit" className="btn  btn-primary" onMouseOver={this.createAccount}>Create Account</button>
+          <button type="submit" className="btn  btn-primary" onClick={this.createAccount}>Create Account</button>
 
         </form>
       </div>
-
+  </div>
     )
   }
 }

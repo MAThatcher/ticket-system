@@ -1,11 +1,11 @@
 import React from "react"
-
+import '../style.css'
 class Footer extends React.Component{
     render(){
         return(
             <footer className="footer mt-auto py-3 bg-transparent text-left">
-                <div className="container">
-                    <span className="text-white-50">Created By Mitchell Thatcher. Last updated 6-09-2020 <br/>
+                <div className="card-footer">
+                    <span className="text-black">Created By Mitchell Thatcher. Last updated 10-15-2020 <br/>
                         Test account Login Info-<br/>
                         Email: user1@email.com <br/>
                         Password: password1 </span>

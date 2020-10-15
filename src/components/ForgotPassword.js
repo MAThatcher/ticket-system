@@ -3,7 +3,7 @@ import React from 'react';
 class ForgotPassword extends React.Component {
   render(){
     return (
-      <div>Forgot Password</div>
+      <div className="card-main text-white">Forgot Password</div>
     )
   }
 }

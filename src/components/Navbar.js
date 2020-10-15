@@ -14,7 +14,6 @@ class Navbar extends React.Component{
 
 
     handleExit() {
-        console.log("Handle Exit")
         this.setState(prevState => {
             return {
                 imageLocation:"./moon.png"
@@ -23,7 +22,6 @@ class Navbar extends React.Component{
     }
 
     handleHover() {
-        console.log("Handle Hover")
         this.setState( () => {
             return {
                 imageLocation:moonReversed

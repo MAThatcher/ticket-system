@@ -52,48 +52,52 @@ class Login extends React.Component{
     render(){
         return(    
                 <body className="bg-transparent text-center text-white" >
-                    <form className="form-signin">
+                    <br/>
+                    <div className=" card-main">
                         <h1 className="h3 mb-3 font-weight-normal" >Log In</h1>
-
-                        {this.state.badLogin ? <p style={{color:"#FF0000"}}> Incorrect Login Info</p> : <div></div>}
-
-                        <input 
-                            type="email" 
-                            id="inputEmail" 
-                            onChange={this.emailOnchange} 
-                            value={this.state.email} 
-                            placeholder="Email address" 
-                            required 
-                            autoFocus>
-                        </input><br/>
+                        <form className="form-signin">
                             
-                        <input 
-                            type="password" 
-                            id="inputPassword" 
-                            value={this.state.pw} 
-                            placeholder="Password" 
-                            onChange={this.passwordOnChange}
-                            required>
-                        </input>
+                            
+                            {this.state.badLogin ? <p style={{color:"#FF0000"}}> Incorrect Login Info</p> : <div></div>}
+
+                            <input 
+                                type="email" 
+                                id="inputEmail" 
+                                onChange={this.emailOnchange} 
+                                value={this.state.email} 
+                                placeholder="Email address" 
+                                required 
+                                autoFocus>
+                            </input><br/>
+                                
+                            <input 
+                                type="password" 
+                                id="inputPassword" 
+                                value={this.state.pw} 
+                                placeholder="Password" 
+                                onChange={this.passwordOnChange}
+                                required>
+                            </input>
+
+                            <br/><br/>
+
+                            <button className="btn  btn-primary " onClick={this.logIn}>Sign in</button>
+                            
+                        </form>
+
+                        <br></br>
+
+                        <Link to="/CreateAccount">
+                            <button  type="submit" className="btn  btn-primary "> Create Account </button>
+                        </Link>
 
                         <br/><br/>
 
-                        <button className="btn  btn-primary " onClick={this.logIn}>Sign in</button>
+                        <Link to="/ForgotPassword">
+                            <button type="submit" className="btn  btn-primary "> Forgot Password </button>
+                        </Link>
 
-                    </form>
-
-                    <br></br>
-
-                    <Link to="/CreateAccount">
-                        <button  type="submit" className="btn  btn-primary "> Create Account </button>
-                    </Link>
-
-                    <br/><br/>
-
-                    <Link to="/ForgotPassword">
-                        <button type="submit" className="btn  btn-primary "> Forgot Password </button>
-                    </Link>
-
+                    </div>
                 </body>
                 
             

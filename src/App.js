@@ -8,6 +8,7 @@ import CreateAccount from "./components/CreateAccount"
 import Nav from "./components/Navbar"
 import Footer from './components/Footer';
 
+
 class App extends React.Component {
   render(){
     return (
@@ -19,7 +20,7 @@ class App extends React.Component {
           <Route path="/Admin" exact component={AdminLanding} />
           <Route path="/ForgotPassword" exact component={ForgotPassowrd} />
           <Route path="/CreateAccount" exact component={CreateAccount} />
-          <Route path="/" component={Footer} />
+          <Route path="/" exact component={Footer} />
         
       </BrowserRouter>
     )

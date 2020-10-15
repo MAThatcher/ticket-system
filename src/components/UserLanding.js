@@ -12,7 +12,7 @@ class UserLanding extends React.Component {
 
   render(){
     return (
-      <div className="bg-transparent text-center text-white">
+      <div className=" text-center text-white card-main">
         <h1 className="h3 mb-3 font-weight-normal" >Hello {this.state.users} </h1>
       </div>
     )
