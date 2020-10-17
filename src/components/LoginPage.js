@@ -17,20 +17,20 @@ class Login extends React.Component{
 
     }
 
-    componentDidMount(){
-        Axios.get("http://localhost:5000/api/get").then((response)=>{
-            console.log(response.data[0].userId)
-            })
-    }
-
     logIn (e) {
         e.preventDefault() 
-         const email = this.state.email
-         const pw = this.state.pw
-         console.log(email,pw)
-         Axios.get("http://localhost:5000/api/login", {email,pw }).then((res)=>{
-            console.log(res)
-            console.log("yes!")
+        const email = this.state.email
+        const pw = this.state.pw
+        console.log(email,pw)
+        Axios.post("http://localhost:5000/api/login", {email:email,pw:pw} ).then((res)=>{
+           if(res.data.length===0){
+                this.setState({badLogin:true})
+            }
+            else if (res.data.length ===1){
+                this.setState({badLogin:false})
+                alert("Correct login but website is a work in progress")
+            }
+            console.log(res.data)
          })
      }
 
@@ -70,6 +70,7 @@ class Login extends React.Component{
                                 value={this.state.pw} 
                                 placeholder="Password" 
                                 onChange={this.passwordOnChange}
+                                autoFocus={false}
                                 required>
                             </input>
 
