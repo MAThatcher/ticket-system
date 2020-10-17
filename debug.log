@@ -1,2 +1,7 @@
 [1015/125311.202:ERROR:crash_report_database_win.cc(457)] unexpected header
 [1016/143641.196:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1016/234745.496:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1016/235745.503:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1016/235745.503:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1016/235745.504:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1016/235745.505:ERROR:crash_report_database_win.cc(457)] unexpected header

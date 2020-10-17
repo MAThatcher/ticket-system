@@ -1,5 +1,4 @@
 import React from "react"
-import userData from "../UserData"
 import {Link} from 'react-router-dom';
 import Axios from 'axios'
 
@@ -7,7 +6,6 @@ class Login extends React.Component{
     constructor(){
         super()
         this.state = {
-            users: userData,
             email:"",
             pw:"",
             badLogin: false
@@ -34,30 +32,7 @@ class Login extends React.Component{
             console.log(res)
             console.log("yes!")
          })
-         
      }
-
-    // logIn(event){
-    //     // if email exists in users.userId and password matches
-    //     // log in and take to the proper page. Admins to admin page
-    //     // user to user page
-    //     console.log("login Function")
-
-    //     //determines if log in info is for a valid account
-    //     const user = this.state.users.filter(loginInfo => loginInfo.userId === this.state.email && loginInfo.userPw === this.state.pw && loginInfo.activated === true)
-
-    //     //Debug
-    //     if (user.length === 1){
-    //         this.setState({badLogin:false})
-    //         console.log("Correct Login")
-    //     }
-    //     else {
-    //         this.setState({badLogin:true})
-    //         console.log("Bad loging info")
-    //     }
-    //     event.preventDefault()
-    // }
-
 
     passwordOnChange(e){
         console.log("pwchange")

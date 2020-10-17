@@ -15,21 +15,18 @@ app.use("/users",usersRoutes)
 app.get("/", (req,res) => res.send("Hello World!"))
 
 app.get("/api/get", (req,res) => {
-    const sqlUserLogin ="SELECT userId, userPw from users where userId = 'user1@email.com' and userPw = 'password1'"
+    const sqlUserLogin ="SELECT userId, userPw, userName from users where userId = 'user2@email.com' and userPw = 'password2'"
     mysqlConnection.query(sqlUserLogin, (err,result)=> {
         res.send(result)
     })
-    
 })
 
-
 app.get("/api/login", (req,res) => {
-    const email =req.body.email
-    const password =req.body.pw
+    const email = req.body.email
+    const password = req.body.pw
     console.log(email, password)
     const sqlUserLogin ="SELECT userId, userPw from users where userId = '?' and userPw = '?'"
     mysqlConnection.query(sqlUserLogin, [email, password], (err,result)=> {console.log(result)})
-    
 })
 app.listen(5000, ()=> {
     console.log(`Server listening on port 5000`)
