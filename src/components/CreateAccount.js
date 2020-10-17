@@ -1,11 +1,9 @@
 import React from "react";
-import userData from "../UserData"
-
+import Axios from 'axios'
 class CreateAccount extends React.Component {
   constructor(){
     super()
     this.state = {
-      users:userData,//REMOVE WHEN CONNECTED TO DATABASE
       email:"",
       username:"",
       pw1:"",
@@ -28,18 +26,22 @@ class CreateAccount extends React.Component {
     }
     else{
       this.setState({pwSame:true})
-      const existingEmail = this.state.users.filter(loginInfo => loginInfo.userId === this.state.email)
-      if (existingEmail.length === 1){
-        console.log("User Exists all ready")
-        this.setState({emailExists:true})
-      }
-      else if (existingEmail.length === 0){
-        //TODO add user to database
-      }
+      const email = this.state.email
+      const pw = this.state.pw1
+      const userName = this.state.username
+      Axios.post("http://localhost:5000/api/createAccount", {email:email,pw:pw,userName:userName} ).then((res)=>{ 
+          if(res.data.exists===true){
+            this.setState({emailExists:true})
+          }
+          else{
+            this.setState({emailExists:false})
+            alert("Account Created")
+          }
+        })
     }
-    console.log(this.state)
     event.preventDefault()
   }
+
   updateEmail(e){
     this.setState({email: e.target.value})
   }
