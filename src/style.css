@@ -3,7 +3,7 @@
     margin-right: auto;
     position: relative;
     padding: 15px 16px;
-    width: 25%;
+    width: 20%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color:#34537f77;
     text-align: center;
@@ -17,7 +17,7 @@
     padding: 5px 16px;
     width: 15%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #34537fd7;
+    background-color: #34537f77;
     text-align: center;
     border-radius: 15px;
 }
