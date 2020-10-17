@@ -6,8 +6,8 @@ class Login extends React.Component{
     constructor(){
         super()
         this.state = {
-            email:"",
-            pw:"",
+            email:"user1@email.com",
+            pw:"password1",
             badLogin: false
         }
         this.logIn = this.logIn.bind(this)
@@ -21,7 +21,6 @@ class Login extends React.Component{
         e.preventDefault() 
         const email = this.state.email
         const pw = this.state.pw
-        console.log(email,pw)
         Axios.post("http://localhost:5000/api/login", {email:email,pw:pw} ).then((res)=>{
            if(res.data.length===0){
                 this.setState({badLogin:true})
@@ -29,8 +28,11 @@ class Login extends React.Component{
             else if (res.data.length ===1){
                 this.setState({badLogin:false})
                 alert("Correct login but website is a work in progress")
+                this.setState({
+                    email:"",
+                    pw:""
+                })
             }
-            console.log(res.data)
          })
      }
 
@@ -92,6 +94,13 @@ class Login extends React.Component{
                             <button type="submit" className="btn  btn-primary "> Forgot Password </button>
                         </Link>
 
+                    </div>
+                    <div className="card-footer">
+                        <span className="text-white">Created By Mitchell Thatcher. <br/>
+                            Last updated 10-17-2020 <br/>
+                            Test account Login Info-<br/>
+                            Email: user1@email.com <br/>
+                            Password: password1 </span>
                     </div>
                 </body>
                 
