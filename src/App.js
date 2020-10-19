@@ -6,6 +6,7 @@ import AdminLanding from "./components/AdminLanding"
 import ForgotPassowrd from "./components/ForgotPassword"
 import CreateAccount from "./components/CreateAccount"
 import Nav from "./components/Navbar"
+import  './style.css'
 
 class App extends React.Component {
   render(){

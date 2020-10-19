@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from 'react-router-dom'
 import Axios from 'axios'
+
 class CreateAccount extends React.Component {
   constructor(){
     super()
@@ -128,9 +129,6 @@ class CreateAccount extends React.Component {
         <Link to="/">
           <button type="submit" className="btn  btn-primary "> Login </button>
         </Link>
-      </div>
-      <div className="card-footer">
-        WARNING! Passwords currntly stored as plain text
       </div>
   </div>
     )
