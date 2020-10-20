@@ -1,12 +1,13 @@
 import React from "react"
 import {Link} from 'react-router-dom';
-import moonReversed from './moonReversed.png'
+import moonReversed from './img/moonReversed.png'
+import moon from './img/moon.png'
 class Navbar extends React.Component{
     constructor(){
         super()
         this.state= {
             size:40,
-            imageLocation:"./moon.png"
+            imageLocation:moon
         }
         this.handleHover = this.handleHover.bind(this)
         this.handleExit = this.handleExit.bind(this)
@@ -16,7 +17,7 @@ class Navbar extends React.Component{
     handleExit() {
         this.setState(prevState => {
             return {
-                imageLocation:"./moon.png"
+                imageLocation:moon
             }
         })
     }

@@ -21,6 +21,14 @@
     text-align: center;
     border-radius: 15px;
 }
+.table,th,td {
+    border:1px solid white;
+    
+}
+
 .width-05 {
     width: 5%;
+}
+.width-85 {
+    width: 85%;
 }
