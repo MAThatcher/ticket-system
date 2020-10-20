@@ -7,14 +7,13 @@ class AdminLanding extends React.Component {
     super()
     this.state = {
       tickets:[],
-      email:"admin1@email.com",
+      // email:"admin1@email.com",
       userName:'LUNA_Jeb'
   }
 }
 
 //retrieve all tickets from this user
 componentDidMount(){
-  const email = this.state.email
   Axios.get("http://localhost:5000/api/adminPage").then((res)=>{
           this.setState({tickets:res.data})
          })

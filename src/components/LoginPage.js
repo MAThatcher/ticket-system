@@ -22,8 +22,7 @@ class Login extends React.Component{
         const email = this.state.email
         const pw = this.state.pw
         Axios.post("http://localhost:5000/api/login", {email:email,pw:pw} ).then((res)=>{
-           console.log(res.data)
-            if (res.data ===true){
+            if (res.data === true){
                 this.setState({badLogin:false})
                 alert("Correct login but website is a work in progress")
                 this.setState({
@@ -48,7 +47,7 @@ class Login extends React.Component{
 
     render(){
         return(    
-                <body className="bg-transparent text-center text-white" >
+                <div className="bg-transparent text-center text-white" >
                     <br/>
                     <div className=" card-main">
                         <h1 className="h3 mb-3 font-weight-normal" >Log In</h1>
@@ -91,19 +90,19 @@ class Login extends React.Component{
 
                         <br/><br/>
 
-                        <Link to="/ForgotPassword">
+                        {/* <Link to="/ForgotPassword">
                             <button type="submit" className="btn  btn-primary "> Forgot Password </button>
-                        </Link>
+                        </Link> */}
 
                     </div>
                     <div className="card-footer">
                         <span className="text-white">Created By Mitchell Thatcher. <br/>
-                            Last updated 10-19-2020 <br/>
+                            Last updated 10-20-2020 <br/>
                             Test account Login Info-<br/>
                             Email: email@email.com <br/>
                             Password: Password </span>
                     </div>
-                </body>
+                </div>
                 
             
         )

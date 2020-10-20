@@ -13,6 +13,9 @@ Router.post("/", (req,res) => {
                 res.send(result1)
             })
         }
+        else {
+            res.send(result)
+        }
     })
 })
 
