@@ -1,13 +1,13 @@
 import React from "react"
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios from 'axios'
 
 class Login extends React.Component{
     constructor(){
         super()
         this.state = {
-            email:"email@email.com",
-            pw:"Password",
+            email:"user3@email.com",
+            pw:"password3",
             badLogin: false
         }
         this.logIn = this.logIn.bind(this)
@@ -19,16 +19,20 @@ class Login extends React.Component{
 
     logIn (e) {
         e.preventDefault() 
-        const email = this.state.email
-        const pw = this.state.pw
+        const {email, pw } = this.state
         Axios.post("http://localhost:5000/api/login", {email:email,pw:pw} ).then((res)=>{
-            if (res.data === true){
-                this.setState({badLogin:false})
-                alert("Correct login but website is a work in progress")
-                this.setState({
-                    email:"",
-                    pw:""
-                })
+
+            //successful login
+            if (res.data.data !== false){
+                const {userId,userName} = res.data[0]
+
+                //if user is an admin
+                if (res.data[0].admin.data[0] ===1){
+                    this.props.history.push("/admin",{userId,userName})   
+                }
+                else if (res.data[0].admin.data[0]===0){
+                    this.props.history.push("/user",{userId,userName})   
+                }
             }
             else{
                 this.setState({badLogin:true})

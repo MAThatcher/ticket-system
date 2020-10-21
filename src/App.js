@@ -19,7 +19,6 @@ class App extends React.Component {
           <Route path="/Admin" exact component={AdminLanding} />
           <Route path="/ForgotPassword" exact component={ForgotPassowrd} />
           <Route path="/CreateAccount" exact component={CreateAccount} />
-
         
       </BrowserRouter>
     )

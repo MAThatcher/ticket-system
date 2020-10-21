@@ -7,16 +7,18 @@ class UserLanding extends React.Component {
     super()
     this.state = {
       tickets:[],
-      email:"user3@email.com",
-      userName:'thirsties'
+      userId:"",
+      userName:""
   }
 }
 
 //retrieve all tickets from this user
 componentDidMount(){
-  const email = this.state.email
-  Axios.post("http://localhost:5000/api/userPage",{email:email}).then((res)=>{
+  const {userId, userName} = this.props.location.state
+  this.setState({userId,userName})
+  Axios.post("http://localhost:5000/api/userPage",{userId}).then((res)=>{
           this.setState({tickets:res.data})
+          
          })
 }
 
@@ -43,7 +45,7 @@ componentDidMount(){
                 <th scope="col"style={{width:"300px"}}>Date Created</th>
                 <th scope="col">Ticket Summary</th>
                 <th scope="col" style={{width:"150px"}}>Ticket ID</th>
-                <th scope="col"style={{width:"250px"}}>Open</th>
+                <th scope="col"style={{width:"150px"}}>Open</th>
               </tr>
             </thead>
             <tbody>
