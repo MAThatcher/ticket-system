@@ -14,12 +14,19 @@ class UserLanding extends React.Component {
 
 //retrieve all tickets from this user
 componentDidMount(){
-  const {userId, userName} = this.props.location.state
-  this.setState({userId,userName})
-  Axios.post("http://localhost:5000/api/userPage",{userId}).then((res)=>{
-          this.setState({tickets:res.data})
-          
-         })
+
+  //try catch block to prevent crashing when manually going to /user
+  try{
+    const {userId, userName} = this.props.location.state
+    this.setState({userId,userName})
+    Axios.post("http://localhost:5000/api/userPage",{userId}).then((res)=>{
+            this.setState({tickets:res.data})
+            
+          })
+  }
+  catch (e){
+    this.props.history.push("/")  
+  }
 }
 
   render(){
@@ -30,6 +37,7 @@ componentDidMount(){
         date={ticket.ticketDate}
         userName={ticket.userName}
         message={ticket.messageText}
+        userId={ticket.userId}
       />
     )
     return (
@@ -53,7 +61,10 @@ componentDidMount(){
               {ticketItem}
 
             </tbody>
-          </table>
+          </table>          
+        </div><br/>
+        <div className="card-main">
+          <button className="btn  btn-primary ">New Ticket</button>
         </div>
       </div>
     )
