@@ -41,11 +41,9 @@ class Login extends React.Component{
      }
 
     passwordOnChange(e){
-        console.log("pwchange")
         this.setState({pw : e.target.value})
     }
     emailOnchange(e){
-        console.log("emailchange")
         this.setState({email : e.target.value})
     }
 
@@ -101,7 +99,7 @@ class Login extends React.Component{
                     </div>
                     <div className="card-footer">
                         <span className="text-white">Created By Mitchell Thatcher. <br/>
-                            Last updated 10-20-2020 <br/>
+                            Last updated 10-22-2020 <br/>
                             Test account Login Info-<br/>
                             Email: email@email.com <br/>
                             Password: Password </span>
