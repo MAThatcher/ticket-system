@@ -6,6 +6,7 @@ import AdminLanding from "./components/AdminLanding"
 import ForgotPassowrd from "./components/ForgotPassword"
 import CreateAccount from "./components/CreateAccount"
 import Nav from "./components/Navbar"
+import Ticket from "./components/Ticket"
 import  './style.css'
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
           <Route path="/Admin" exact component={AdminLanding} />
           <Route path="/ForgotPassword" exact component={ForgotPassowrd} />
           <Route path="/CreateAccount" exact component={CreateAccount} />
+          <Route path="/Ticket" exact component={Ticket} />
         
       </BrowserRouter>
     )
