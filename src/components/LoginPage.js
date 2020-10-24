@@ -99,7 +99,7 @@ class Login extends React.Component{
                     </div>
                     <div className="card-footer">
                         <span className="text-white">Created By Mitchell Thatcher. <br/>
-                            Last updated 10-22-2020 <br/>
+                            Last updated 10-23-2020 <br/>
                             Test account Login Info-<br/>
                             Email: email@email.com <br/>
                             Password: Password </span>
