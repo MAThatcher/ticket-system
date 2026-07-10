@@ -12,7 +12,7 @@ Router.post("/", (req,res) => {
 
         //if query retrieves a single user check if passwords are the same
         if (result.length === 1){
-            bcrypt.compare(pw, result[0].userPw, (err, result1)=> {
+            bcrypt.compare(pw, result[0].userPw, (compareErr, result1)=> {
                 if(result1 ===true){
 
                     //Successful Login

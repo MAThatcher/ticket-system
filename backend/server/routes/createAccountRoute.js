@@ -21,9 +21,9 @@ Router.post("/", (req,res) => {
             const password = req.body.pw
             const userName = req.body.userName
 
-            bcrypt.hash(password, saltRounds, (err, hash)=> {
+            bcrypt.hash(password, saltRounds, (hashErr, hash)=> {
                 const sqlCreateAccount = "INSERT INTO users (userId,userPw,userName,activated) Values (?,?,?,1)"
-                mysqlConnection.query(sqlCreateAccount, [email, hash, userName], (err,result2)=> {
+                mysqlConnection.query(sqlCreateAccount, [email, hash, userName], (insertErr,result2)=> {
                 }) 
             })            
         }
