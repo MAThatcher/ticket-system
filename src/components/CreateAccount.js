@@ -29,7 +29,7 @@ class CreateAccount extends React.Component {
       this.setState({emailExists:false})
       alert("Passwords do not match")
     }    
-    else if (this.state.pw1.length <= 7 || this.state.pw1.length <=7){
+    else if (this.state.pw1.length <= 7 || this.state.pw2.length <= 7){
       alert("Password must be 8 characters or more")
     }
     else{
