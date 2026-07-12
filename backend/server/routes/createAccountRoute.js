@@ -24,11 +24,11 @@ Router.post("/", (req,res) => {
             bcrypt.hash(password, saltRounds, (err, hash)=> {
                 const sqlCreateAccount = "INSERT INTO users (userId,userPw,userName,activated) Values (?,?,?,1)"
                 mysqlConnection.query(sqlCreateAccount, [email, hash, userName], (err,result2)=> {
-                }) 
-            })            
+                })
+            })
         }
     })
-    
+
 })
 
 module.exports = Router
